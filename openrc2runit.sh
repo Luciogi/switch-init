@@ -16,7 +16,6 @@ pacman -Qsq openrc >> openrc-list
 echo "Create List of required Openrc pkgs"
 sed -e 's/openrc/runit/g' openrc-list >> runit-list
 
-# pacman -Sw $(cat openrc-list)
 pacman -Sw $(cat runit-list) --noconfirm >> runit-list-1 2>&1
 # Error check
 if grep "error" runit-list-1;
